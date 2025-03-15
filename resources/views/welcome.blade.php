@@ -220,7 +220,7 @@
     <!--====== Start Header ======-->
     <header class="template-header absolute-header navbar-left sticky-header">
         <div class="topbar">
-            <p >Let's make something great together.</p>
+            <p >Let's make something great togethers.</p>
         </div>
         <div class="container">
             <div class="header-inner">

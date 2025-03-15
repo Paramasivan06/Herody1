@@ -1,0 +1,194 @@
+/*
+
+Template: Sofbox - Responsive Software Landing Page
+Author: iqonicthemes.in
+Version: 3.0
+Design and Developed by: iqonicthemes.in
+
+*/
+
+/*================================================
+[  Table of contents  ]
+================================================
+
+1  Google Font
+2  Import Css
+3  General
+5  Text color
+6  Title
+7  Button
+8  Background  color
+9  Background overlay color
+10 Back to Top
+11 Loader
+12 Extra class
+
+
+======================================
+[ End table content ]
+======================================*/
+
+/*---------------------------------------------------------------------
+Google Font
+-----------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600,700');
+
+/*---------------------------------------------------------------------
+import Css
+-----------------------------------------------------------------------*/
+@import url("all.min.css");
+@import url("owl.carousel.min.css");
+@import url("ionicons.min.css");
+@import url("slick-theme.css");
+@import url("wow.css");
+
+/*---------------------------------------------------------------------
+General
+-----------------------------------------------------------------------*/
+*::-moz-selection { background: #2737ff; color: #fff; text-shadow: none; }
+::-moz-selection { background: #2737ff; color: #fff; text-shadow: none; }
+::selection { background: #2737ff; color: #fff; text-shadow: none; }
+body { font-family: 'Muli', sans-serif; font-weight: normal; font-style: normal; font-size: 16px; line-height: 2em; color: #7c7c7c; }
+a { -webkit-transition: all 0.3s ease-out 0s; -moz-transition: all 0.3s ease-out 0s; -ms-transition: all 0.3s ease-out 0s; -o-transition: all 0.3s ease-out 0s; transition: all 0.3s ease-out 0s; }
+a:focus { text-decoration: none !important; }
+a:focus, a:hover { color: #ff9068; text-decoration: none !important; }
+a, button { outline: medium none !important; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: normal; color: #000000; margin: 0px; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: inherit; }
+label { font-weight: normal; }
+h1 { font-size: 52px; line-height: 1.3em; }
+h2 { font-size: 40px; line-height: 1.3em; }
+h3 { font-size: 30px; line-height: 1.3em; }
+h4 { font-size: 26px; line-height: 1.3em; }
+h5 { font-size: 24px; line-height: 1.3em; }
+h6 { font-size: 18px; line-height: 1.3em; }
+ul { margin: 0px; padding: 0px; }
+hr { margin: 0; padding: 0px; border-bottom: 1px solid #cccccc; display: inline-block; width: 100%; border-top: 0px; }
+.container{max-width: 1170px;}
+.container-fluid{padding:0 100px;}
+.iq-family{font-family: }
+.iq-fw-6{font-weight: 600;}
+.iq-fw-7{font-weight: 700;}
+.iq-fw-8{font-weight: 800;}
+
+.iq-font-16{font-size: 16px; line-height: 26px;}
+.iq-font-18{font-size: 18px}
+.iq-font-20{font-size: 20px}
+/*---------------------------------------------------------------------
+Text color
+-----------------------------------------------------------------------*/
+.orange-color {color: #ff9068 }
+.text-white { color: #ffffff; }
+.text-black { color: #000000; }
+.light-black{color: #192130}
+.text-gray { color: #7c7c7c; }
+
+
+/*---------------------------------------------------------------------
+Heading Title
+-----------------------------------------------------------------------*/
+.title-box { margin-bottom: 100px; text-align: center;font-weight: bold;  }
+.title-box .title { margin-bottom:20px; color: #7c7c7c; font-weight: bold;text-transform: uppercase; position: relative; display: inline-block; padding-left: 20px; padding-right: 60px;}
+.title-box .subtitle{font-size: 40px; line-height: 70px;}
+.title:after{position: absolute; width: 6px; height: 6px; line-height: 6px; content:""; background:#ff9068 ; left: 0 ;top: 8px;}
+.title:before{position: absolute; width: 50px; height: 4px; line-height: 6px; content:""; background:#ff9068 ; right:0 ;top: 10px;}
+
+
+/*----------------------------------------------------------------------
+ Buttons
+-----------------------------------------------------------------------*/
+.button.login-btn{padding: 6px 40px;}
+.button {font-family:'Montserrat' sans-serif;-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px; color: #ffffff; cursor: pointer; padding: 10px 40px; font-weight: 600; font-size: 16px; position: relative; background: rgba(253,169,108,1);display: inline-block;
+background-image: linear-gradient(to right, #fda96c 0%,#fe9f6a 50%, #ff9068 100%); transition: all .5s ease-in-out; transition: all .5s ease-in-out; -moz-transition: all .5s ease-in-out; -ms-transition: all .5s ease-in-out; -o-transition: all .5s ease-in-out; -webkit-transition: all .5s ease-in-out;
+ background-size: 200% auto;  }
+.button:hover, .button:focus { color: #ffffff; background-position: right center;}
+
+/*---------------------------------------------------------------------
+Background  color
+-----------------------------------------------------------------------*/
+.white-bg { background: #ffffff; }
+
+.main-bg { background: rgba(118,109,254,1);
+background: -moz-linear-gradient(45deg, rgba(118,109,254,1) 0%, rgba(39,53,255,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(118,109,254,1)), color-stop(100%, rgba(39,53,255,1)));
+background: -webkit-linear-gradient(45deg, rgba(118,109,254,1) 0%, rgba(39,53,255,1) 100%);
+background: -o-linear-gradient(45deg, rgba(118,109,254,1) 0%, rgba(39,53,255,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(118,109,254,1) 0%, rgba(39,53,255,1) 100%);
+background: linear-gradient(45deg, rgba(118,109,254,1) 0%, rgba(39,53,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#766dfe', endColorstr='#2735ff', GradientType=1 );}
+
+.orange-bg{background: rgba(253,169,108,1);
+background: -moz-linear-gradient(left, rgba(253,169,108,1) 0%, rgba(255,144,104,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(253,169,108,1)), color-stop(100%, rgba(255,144,104,1)));
+background: -webkit-linear-gradient(left, rgba(253,169,108,1) 0%, rgba(255,144,104,1) 100%);
+background: -o-linear-gradient(left, rgba(253,169,108,1) 0%, rgba(255,144,104,1) 100%);
+background: -ms-linear-gradient(left, rgba(253,169,108,1) 0%, rgba(255,144,104,1) 100%);
+background: linear-gradient(to right, rgba(253,169,108,1) 0%, rgba(255,144,104,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fda96c', endColorstr='#ff9068', GradientType=1 );;}
+
+/*---------------------------------------------------------------------
+Background overlay color
+-----------------------------------------------------------------------*/
+
+/* Background Gradient Black */
+.bg-over-black-10:before { background: rgba(0, 0, 0, 0.1); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-black-20:before { background: rgba(0, 0, 0, 0.2); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-black-30:before { background: rgba(0, 0, 0, 0.3); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-black-40:before { background: rgba(0, 0, 0, 0.4); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-black-50:before { background: rgba(0, 0, 0, 0.5); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-black-60:before { background: rgba(0, 0, 0, 0.6); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-black-70:before { background: rgba(0, 0, 0, 0.7); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-black-80:before { background: rgba(0, 0, 0, 0.8); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-black-90:before { background: rgba(0, 0, 0, 0.9); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+
+/* Background Gradient White */
+.bg-over-white-10:before { background: rgba(255, 255, 255, 0.1); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-white-20:before { background: rgba(255, 255, 255, 0.2); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-white-30:before { background: rgba(255, 255, 255, 0.3); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-white-40:before { background: rgba(255, 255, 255, 0.4); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-white-50:before { background: rgba(255, 255, 255, 0.5); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-white-60:before { background: rgba(255, 255, 255, 0.6); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-white-70:before { background: rgba(255, 255, 255, 0.7); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-white-80:before { background: rgba(255, 255, 255, 0.8); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+.bg-over-white-90:before { background: rgba(255, 255, 255, 0.9); content: ""; height: 100%; left: 0; position: absolute; top: 0; width: 100%; z-index: 0; }
+
+/*---------------------------------------------------------------------
+                               Back to Top
+-----------------------------------------------------------------------*/
+#back-to-top .top { z-index: 999; position: fixed; margin: 0px; color: #fff; background-image:linear-gradient(to right, #fda96c 0%,#fe9f6a 50%, #ff9068 100%);background-position: 150% auto; position: fixed; bottom: 25px; right: 25px; z-index: 999; font-size: 26px; width: 50px; height: 50px; text-align: center; line-height: 50px; border-radius: 90px; -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
+#back-to-top .top:hover { background-position: right center; color: #fff; -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); }
+
+/*---------------------------------------------------------------------
+Loader
+-----------------------------------------------------------------------*/
+#loading { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #ffffff; z-index: 9999; }
+#loading img{width: 150px;}
+
+
+
+/*---------------------------------------------------------------------
+Extra class
+---------------------------------------------------------------------*/
+section { background: #ffffff; padding: 100px 0; }
+
+/*---------------------------------------------------------------------
+4 Input and textarea
+-----------------------------------------------------------------------*/
+.form-control ,input,textarea{ border: 2px solid #dddddd; outline: none; box-shadow: inherit !important; width: 100%;padding: 4px 20px; height: 46px; color: #666666;}
+textarea{ height: 230px; padding: 15px 30px;margin-bottom: 30px;
+  }
+
+.form-control:hover, .form-control:focus,input:hover,textarea:hover,textarea:focus{ border-color:#ff9068 ; }
+
+/*************************
+   BG - Images
+*************************/
+.parallax { background-size: cover !important; -webkit-background-size: cover !important; -moz-background-size: cover !important; -ms-background-size: cover !important; position: relative; z-index: 0; background-origin: initial; background-position: center center !important; background-repeat: no-repeat; }
+
+
+
+
+

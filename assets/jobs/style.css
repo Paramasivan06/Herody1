@@ -1,0 +1,82 @@
+body{
+    background: #fffdd0;
+}
+.job-block{
+    background: #ffff;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 1em;
+}
+.job-blocks{
+    border-radius: 5px;
+    box-shadow: 0 0 2px 2px gray;
+    padding: .7em;
+}
+.job-title{
+    color: #000000;
+    font-size: 1.25em;
+    font-weight: bolder;
+}
+.job-by{
+    color: rgb(148, 159, 170);
+    font-size: 1.12em;
+    font-weight: bold;
+}
+.others{
+    color: rgb(148, 159, 170);
+    font-size: 1em;
+    font-weight: bold;
+}
+.others-dark{
+    color: #000000;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.job-info{
+    background: #ffff;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 2px gray;
+    padding: .7em;
+}
+.job-others{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.location-search{
+    background: #ffff;
+    color: #000000;
+    padding: 1em;
+
+}
+
+.blank-area{
+    height: 7em;
+}
+
+.apply-area{
+    background: #ffff;
+    box-shadow: 0 0 2px 2px gray;
+    position: fixed;
+    width: 100%;
+    padding: 1em;
+    bottom: 0;
+}
+
+@media screen and (max-width: 830px){
+    .job-block{
+        grid-template-columns: auto auto;
+    }
+    .job-others{
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (max-width: 700px){
+    .job-block{
+        grid-template-columns: auto;
+    }
+    .job-others{
+        grid-template-columns: auto auto;
+    }
+}

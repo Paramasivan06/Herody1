@@ -1,11 +1,24 @@
 <?php
 
-use App\Http\Controllers\Api\GameController;
-use App\Http\Controllers\Api\UserRewardController;
+
 // use App\Http\Controllers\API\UserRewardController as APIUserRewardController;
-use App\Http\Controllers\Api\WalletTransactionController;
+
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Admin\HelpLinkController;
+use App\Http\Controllers\API\User\MainController;
+use App\Http\Controllers\API\User\DetailController;
+use App\Http\Controllers\API\ProjectController;
+use App\Http\Controllers\API\GigController;
+use App\Http\Controllers\API\CampaignController;
+use App\Http\Controllers\API\TelecallingController;
+use App\Http\Controllers\API\RazorpayController;
+use App\Http\Controllers\API\WalletTransactionController;
+use App\Http\Controllers\API\TransactionController;
+use App\Http\Controllers\API\OfferwallUserController;
+use App\Http\Controllers\API\OfferwallUserOfferController;
+use App\Http\Controllers\API\UserRewardController;
+use App\Http\Controllers\API\GameController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -20,93 +33,101 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::namespace('API\User')->prefix('user')->group(function(){
-    Route::post('login','MainController@login');
-    Route::get('userexist','MainController@userexist');
-    Route::post('register','MainController@register');
-    Route::post('details','DetailController@details');
-    Route::post('skills','DetailController@skills');
-    Route::post('edu','DetailController@edu');
-    Route::post('exp','DetailController@exp');
-    Route::post('projects','DetailController@projects');
-    Route::post('skillsUpdate','DetailController@skillsUpdate');
-    Route::post('eduUpdate','DetailController@eduUpdate');
-    Route::post('expUpdate','DetailController@expUpdate');
-    Route::post('projectsUpdate','DetailController@projectsUpdate');
-    Route::post('skillsDelete','DetailController@skillsDelete');
-    Route::post('eduDelete','DetailController@eduDelete');
-    Route::post('expDelete','DetailController@expDelete');
-    Route::post('projectsDelete','DetailController@projectsDelete');
-    Route::post('hobbiesUpdate','DetailController@hobbyUpdate');
-    Route::post('achievementsUpdate','DetailController@achUpdate');
-    Route::post('socialUpdate','DetailController@socialUpdate');
-    Route::post('profileUpdate','DetailController@profileUpdate');
-    Route::post('profileImage','DetailController@profileImage');
-    Route::post('passUpdate','DetailController@passUpdate');
-    Route::post('loginTC','MainController@loginTC');
-    Route::post('verifyMobile','MainController@verifyMobile');
-    Route::post('forgot-password','MainController@forgotPassword');
-    Route::post('email-verified','MainController@emailVerified');
-    Route::post('storeRef','DetailController@storeRef');
-    Route::post('get-session','MainController@getSession');
+Route::prefix('user')->group(function () {
+    Route::post('login', [MainController::class, 'login']);
+    Route::get('userexist', [MainController::class, 'userexist']);
+    Route::post('register', [MainController::class, 'register']);
+    Route::post('details', [DetailController::class, 'details']);
+    Route::post('skills', [DetailController::class, 'skills']);
+    Route::post('edu', [DetailController::class, 'edu']);
+    Route::post('exp', [DetailController::class, 'exp']);
+    Route::post('projects', [DetailController::class, 'projects']);
+    Route::post('skillsUpdate', [DetailController::class, 'skillsUpdate']);
+    Route::post('eduUpdate', [DetailController::class, 'eduUpdate']);
+    Route::post('expUpdate', [DetailController::class, 'expUpdate']);
+    Route::post('projectsUpdate', [DetailController::class, 'projectsUpdate']);
+    Route::post('skillsDelete', [DetailController::class, 'skillsDelete']);
+    Route::post('eduDelete', [DetailController::class, 'eduDelete']);
+    Route::post('expDelete', [DetailController::class, 'expDelete']);
+    Route::post('projectsDelete', [DetailController::class, 'projectsDelete']);
+    Route::post('hobbiesUpdate', [DetailController::class, 'hobbyUpdate']);
+    Route::post('achievementsUpdate', [DetailController::class, 'achUpdate']);
+    Route::post('socialUpdate', [DetailController::class, 'socialUpdate']);
+    Route::post('profileUpdate', [DetailController::class, 'profileUpdate']);
+    Route::post('profileImage', [DetailController::class, 'profileImage']);
+    Route::post('passUpdate', [DetailController::class, 'passUpdate']);
+    Route::post('loginTC', [MainController::class, 'loginTC']);
+    Route::post('verifyMobile', [MainController::class, 'verifyMobile']);
+    Route::post('forgot-password', [MainController::class, 'forgotPassword']);
+    Route::post('email-verified', [MainController::class, 'emailVerified']);
+    Route::post('storeRef', [DetailController::class, 'storeRef']);
+    Route::post('get-session', [MainController::class, 'getSession']);
 
-    Route::post('jprojects','DetailController@jprojects');
-    Route::post('gigs','DetailController@gigs');
-    Route::post('campaigns','DetailController@campaigns');
+    Route::post('jprojects', [DetailController::class, 'jprojects']);
+    Route::post('gigs', [DetailController::class, 'gigs']);
+    Route::post('campaigns', [DetailController::class, 'campaigns']);
 
-    Route::post('withdrawMethod','DetailController@withdrawMethod');
-    Route::post('bannerMethod','DetailController@bannerMethod');
-    Route::post('withdraw','DetailController@withdraw');
-    Route::post('transactions','DetailController@transactions');
-    Route::post('allTransactions','DetailController@allTransactions');
+    Route::post('withdrawMethod', [DetailController::class, 'withdrawMethod']);
+    Route::post('bannerMethod', [DetailController::class, 'bannerMethod']);
+    Route::post('withdraw', [DetailController::class, 'withdraw']);
+    Route::post('transactions', [DetailController::class, 'transactions']);
+    Route::post('allTransactions', [DetailController::class, 'allTransactions']);
 });
-Route::namespace('API')->group(function(){
-    Route::post('projects','ProjectController@list');
-    Route::post('project/details','ProjectController@details');
-    Route::post('project/apply','ProjectController@apply');
-    Route::post('project/proofs','ProjectController@proofs');
-    Route::post('mobileContent','ProjectController@mobile');
+Route::group([], function () {
+    // Project Routes
+    Route::post('projects', [ProjectController::class, 'list']);
+    Route::post('project/details', [ProjectController::class, 'details']);
+    Route::post('project/apply', [ProjectController::class, 'apply']);
+    Route::post('project/proofs', [ProjectController::class, 'proofs']);
+    Route::post('mobileContent', [ProjectController::class, 'mobile']);
 
-    Route::post('gigs','GigController@list');
-    Route::post('gig/details','GigController@details');
-    Route::post('gig/apply','GigController@apply');
+    // Gig Routes
+    Route::post('gigs', [GigController::class, 'list']);
+    Route::post('gig/details', [GigController::class, 'details']);
+    Route::post('gig/apply', [GigController::class, 'apply']);
 
-    Route::post('gig/proof/fb','GigController@prooffb');
-    Route::post('gig/proof/wa','GigController@proofwa');
-    Route::post('gig/proof/insta','GigController@proofinsta');
-    Route::post('gig/proof/yt','GigController@proofyt');
-    Route::post('gig/proof/instap','GigController@proofinstap');
-    Route::post('gig/proof/os','GigController@proofos');
-    Route::post('gig/proof/ar','GigController@proofar');
-    Route::post('gig/proof/ls','GigController@proofls');
-    Route::post('gig/proofs','GigController@proofs');
+    // Gig Proof Routes
+    Route::post('gig/proof/fb', [GigController::class, 'prooffb']);
+    Route::post('gig/proof/wa', [GigController::class, 'proofwa']);
+    Route::post('gig/proof/insta', [GigController::class, 'proofinsta']);
+    Route::post('gig/proof/yt', [GigController::class, 'proofyt']);
+    Route::post('gig/proof/instap', [GigController::class, 'proofinstap']);
+    Route::post('gig/proof/os', [GigController::class, 'proofos']);
+    Route::post('gig/proof/ar', [GigController::class, 'proofar']);
+    Route::post('gig/proof/ls', [GigController::class, 'proofls']);
+    Route::post('gig/proofs', [GigController::class, 'proofs']);
 
-    Route::post('campaigns','CampaignController@list');
-    Route::post('campaign/details','CampaignController@details');
-    Route::post('campaign/apply','CampaignController@apply');
-    // Route::post('campaign/proof','CampaignController@proofs');
+    // Campaign Routes
+    Route::post('campaigns', [CampaignController::class, 'list']);
+    Route::post('campaign/details', [CampaignController::class, 'details']);
+    Route::post('campaign/apply', [CampaignController::class, 'apply']);
+    // Route::post('campaign/proof', [CampaignController::class, 'proofs']);
 
-    Route::post("telecallings","TelecallingController@list");
-    Route::post("telecalling/details","TelecallingController@details");
-    Route::post("telecalling/apply","TelecallingController@apply");
-    Route::post("telecalling/applications","TelecallingController@applications");
-    Route::post("telecalling/status","TelecallingController@status");
-    Route::post("telecalling/feedback","TelecallingController@feedback");
+    // Telecalling Routes
+    Route::post('telecallings', [TelecallingController::class, 'list']);
+    Route::post('telecalling/details', [TelecallingController::class, 'details']);
+    Route::post('telecalling/apply', [TelecallingController::class, 'apply']);
+    Route::post('telecalling/applications', [TelecallingController::class, 'applications']);
+    Route::post('telecalling/status', [TelecallingController::class, 'status']);
+    Route::post('telecalling/feedback', [TelecallingController::class, 'feedback']);
 
-    Route::post("razorp/addc","RazorpayController@add_contact");
-    Route::post("razorp/fundid","RazorpayController@get_fund_id");
-    Route::post("razorp/withdraw","RazorpayController@withdraw");
-    Route::post('wallet-transactions',[WalletTransactionController::class,'store']);
-    Route::post('transactions','TransactionController@store');
-    Route::post('offerwall-users','OfferwallUserController@store');
-    Route::post('offerwall-user-offer','OfferwallUserOfferController@store');
+    // Razorpay Routes
+    Route::post('razorp/addc', [RazorpayController::class, 'add_contact']);
+    Route::post('razorp/fundid', [RazorpayController::class, 'get_fund_id']);
+    Route::post('razorp/withdraw', [RazorpayController::class, 'withdraw']);
+
+    // Other Routes
+    Route::post('wallet-transactions', [WalletTransactionController::class, 'store']);
+    Route::post('transactions', [TransactionController::class, 'store']);
+    Route::post('offerwall-users', [OfferwallUserController::class, 'store']);
+    Route::post('offerwall-user-offer', [OfferwallUserOfferController::class, 'store']);
     Route::post('user-rewards', [UserRewardController::class, 'store']);
-    Route::get('/games', [GameController::class, 'fetchGames']);
-
+    Route::get('games', [GameController::class, 'fetchGames']);
 });
-// Create a new reward record
-Route::post('test','TrueCallerController@login');
-Route::get("config", "ConfigurationController@fetchConfiguration");
+
+// // Create a new reward record
+// Route::post('test','TrueCallerController@login');
+// Route::get("config", "ConfigurationController@fetchConfiguration");
 
 Route::get('/help-links', [HelpLinkController::class, 'apiIndex']);
 
